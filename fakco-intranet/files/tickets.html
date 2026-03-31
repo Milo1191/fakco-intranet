@@ -1,0 +1,184 @@
+===== ticket.html =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKCO Intranet Portal - IT Helpdesk</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f0ff;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --bg-light: #fff;
+            --bg-panel: #f9f9f9;
+            --success-green: #28a745;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-panel);
+            color: var(--text-dark);
+        }
+        .header {
+            background-color: var(--primary-blue);
+            color: #f4f4f4;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+        .navbar a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .tickets-header {
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .tickets-header h1 {
+            color: var(--primary-blue);
+            margin: 0;
+            font-size: 24px;
+        }
+        .create-ticket-btn {
+            background-color: var(--success-green);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .create-ticket-btn:hover {
+            background-color: #1e7e34;
+        }
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .ticket-list {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+        .ticket-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .ticket-item:last-child {
+            border-bottom: none;
+        }
+        .ticket-info strong {
+            color: var(--primary-blue);
+        }
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .status-open { background-color: #f0ad4e; color: #333; }
+        .status-closed { background-color: #5cb85c; }
+        .status-pending { background-color: #5bc0de; }
+        @media (max-width: 600px) {
+            .tickets-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .ticket-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .ticket-item:last-child {
+                padding-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">FAKCO</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hr.html">HR</a>
+            <a href="tickets.html">IT Helpdesk</a>
+            <a href="directory.html">Directory</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="tickets-header">
+            <h1>IT Helpdesk Tickets</h1>
+            <button class="create-ticket-btn" onclick="alert('Ticket creation form would load here.');">Create Ticket</button>
+        </div>
+
+        <h2 class="section-title">My Open & Recent Tickets</h2>
+        <div class="ticket-list">
+            <div class="ticket-item">
+                <div class="ticket-info">
+                    <strong>TKT-401:</strong> Password Reset Required for Domain Account
+                    <p><small>Requested by: employee1 | Date: 2024-07-18</small></p>
+                </div>
+                <span class="status-badge status-open">Open</span>
+            </div>
+            <div class="ticket-item">
+                <div class="ticket-info">
+                    <strong>TKT-399:</strong> VPN Connection Instability
+                    <p><small>Requested by: employee1 | Date: 2024-07-16</small></p>
+                </div>
+                <span class="status-badge status-pending">Pending Assignment</span>
+            </div>
+            <div class="ticket-item">
+                <div class="ticket-info">
+                    <strong>TKT-355:</strong> Monitor Driver Update Failure
+                    <p><small>Requested by: employee1 | Date: 2024-06-28</small></p>
+                </div>
+                <span class="status-badge status-closed">Closed</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

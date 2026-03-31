@@ -1,0 +1,192 @@
+===== hr.html =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKCO Intranet Portal - HR System</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f0ff;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --bg-light: #fff;
+            --bg-panel: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-panel);
+            color: var(--text-dark);
+        }
+        .header {
+            background-color: var(--primary-blue);
+            color: #f4f4f4;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+        .navbar a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .hr-header {
+            background-color: var(--light-blue);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .hr-header h1 {
+            color: var(--primary-blue);
+            margin: 0;
+            font-size: 28px;
+        }
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+        .card h3 {
+            color: var(--primary-blue);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .employee-info p {
+            margin: 5px 0;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .data-table th, .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .data-table th {
+            background-color: var(--bg-panel);
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar a {
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">FAKCO</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hr.html">HR</a>
+            <a href="tickets.html">IT Helpdesk</a>
+            <a href="directory.html">Directory</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="hr-header">
+            <h1>Human Resources Portal</h1>
+            <p>Manage your employment details and benefits.</p>
+        </div>
+
+        <div class="card-container">
+            <div class="card employee-info">
+                <h3>Your Employee Information (employee1)</h3>
+                <p><strong>Employee ID:</strong> FAKC-9001</p>
+                <p><strong>Title:</strong> Senior Developer</p>
+                <p><strong>Hire Date:</strong> 2020-01-15</p>
+                <p><strong>Department:</strong> Technology</p>
+            </div>
+
+            <div class="card">
+                <h3>Payroll & Compensation</h3>
+                <p>Current Annual Salary: $120,000.00</p>
+                <p>Next Pay Date: 2024-07-31</p>
+                <p><a href="#">View Pay Stub (Placeholder)</a></p>
+            </div>
+
+            <div class="card">
+                <h3>Benefits Summary</h3>
+                <p>Medical Coverage: Tier A (Active)</p>
+                <p>401k Enrollment: 6% Contribution</p>
+                <p><a href="#">Access Benefits Portal (Placeholder)</a></p>
+            </div>
+
+            <div class="card">
+                <h3>Time Off & PTO</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vacation</td>
+                            <td>14.5 Days</td>
+                        </tr>
+                        <tr>
+                            <td>Sick Leave</td>
+                            <td>8.0 Days</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 15px;"><a href="#">Request Time Off (Placeholder)</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

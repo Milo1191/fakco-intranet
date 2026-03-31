@@ -1,0 +1,23 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    server_name _;
+
+    # Serve static HTML pages
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+
+    # Optional: deny access to hidden files
+    location ~ /\. {
+        deny all;
+    }
+
+    # Optional: logging
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+}

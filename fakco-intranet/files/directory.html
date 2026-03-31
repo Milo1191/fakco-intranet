@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKCO Intranet Portal - Employee Directory</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f0ff;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --bg-light: #fff;
+            --bg-panel: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-panel);
+            color: var(--text-dark);
+        }
+        .header {
+            background-color: var(--primary-blue);
+            color: #f4f4f4;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+        .navbar a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .directory-header {
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .directory-header h1 {
+            color: var(--primary-blue);
+            margin: 0;
+            font-size: 24px;
+        }
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .employee-card {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            transition: transform 0.1s;
+        }
+        .employee-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .employee-card h4 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #eee;
+            padding-bottom: 5px;
+        }
+        .employee-card p {
+            margin: 3px 0;
+            font-size: 14px;
+        }
+        .employee-card .email {
+            color: #007bff;
+            word-break: break-all;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar a {
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">FAKCO</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hr.html">HR</a>
+            <a href="tickets.html">IT Helpdesk</a>
+            <a href="directory.html">Directory</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="directory-header">
+            <h1>Employee Directory</h1>
+            <p>Find contact information for all FAKCO personnel.</p>
+        </div>
+
+        <h2 class="section-title">FAKCO Staff Listing</h2>
+        <div class="card-container">
+            
+            <div class="employee-card">
+                <h4>Alice Johnson</h4>
+                <p><strong>Title:</strong> Chief Technology Officer</p>
+                <p><strong>Department:</strong> Executive</p>
+                <p><strong>Email:</strong> <span class="email">alice.johnson@fakco.com</span></p>
+            </div>
+
+            <div class="employee-card">
+                <h4>Bob Smith (employee1)</h4>
+                <p><strong>Title:</strong> Senior Developer</p>
+                <p><strong>Department:</strong> Technology</p>
+                <p><strong>Email:</strong> <span class="email">employee1@fakco.com</span></p>
+            </div>
+            
+            <div class="employee-card">
+                <h4>Carol Davis</h4>
+                <p><strong>Title:</strong> HR Specialist</p>
+                <p><strong>Department:</strong> Human Resources</p>
+                <p><strong>Email:</strong> <span class="email">carol.davis@fakco.com</span></p>
+            </div>
+
+            <div class="employee-card">
+                <h4>David Lee</h4>
+                <p><strong>Title:</strong> Marketing Manager</p>
+                <p><strong>Department:</strong> Marketing</p>
+                <p><strong>Email:</strong> <span class="email">david.lee@fakco.com</span></p>
+            </div>
+
+            <div class="employee-card">
+                <h4>Eve Martinez</h4>
+                <p><strong>Title:</strong> IT Support Technician</p>
+                <p><strong>Department:</strong> IT Services</p>
+                <p><strong>Email:</strong> <span class="email">eve.martinez@fakco.com</span></p>
+            </div>
+            
+            <div class="employee-card">
+                <h4>Frank Green</h4>
+                <p><strong>Title:</strong> Accountant</p>
+                <p><strong>Department:</strong> Finance</p>
+                <p><strong>Email:</strong> <span class="email">frank.green@fakco.com</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

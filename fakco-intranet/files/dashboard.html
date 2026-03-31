@@ -1,0 +1,176 @@
+===== dashboard.html =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKCO Intranet Portal - Dashboard</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f0ff;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --bg-light: #fff;
+            --bg-panel: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-panel);
+            color: var(--text-dark);
+        }
+        .header {
+            background-color: var(--primary-blue);
+            color: #f4f4f4;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+        .navbar a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .dashboard-header {
+            background-color: var(--light-blue);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .dashboard-header h1 {
+            color: var(--primary-blue);
+            margin: 0;
+            font-size: 28px;
+        }
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .card a {
+            text-decoration: none;
+            color: var(--text-dark);
+            display: block;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+            color: var(--primary-blue);
+        }
+        .icon {
+            font-size: 40px;
+            display: block;
+            color: var(--primary-blue);
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar a {
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">FAKCO</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hr.html">HR</a>
+            <a href="tickets.html">IT Helpdesk</a>
+            <a href="directory.html">Directory</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1>Welcome, employee1</h1>
+            <p>Your personalized workspace for immediate access to critical systems.</p>
+        </div>
+
+        <h2 class="section-title">Quick Links</h2>
+        <div class="card-container">
+            <div class="card">
+                <a href="hr.html">
+                    <span class="icon">&#9787;</span>
+                    <div class="card-title">HR System</div>
+                    <p>Access payroll and benefits information.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="tickets.html">
+                    <span class="icon">&#128222;</span>
+                    <div class="card-title">Open Support Tickets</div>
+                    <p>View status or submit new IT requests.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="directory.html">
+                    <span class="icon">&#128100;</span>
+                    <div class="card-title">Employee Directory</div>
+                    <p>Find contact details for colleagues.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <span class="icon">&#128193;</span>
+                    <div class="card-title">Internal Database</div>
+                    <p>Access operational data resources.</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

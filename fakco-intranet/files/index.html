@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKCO Intranet Portal - Home</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f0ff;
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --border-color: #ddd;
+            --bg-light: #fff;
+            --bg-panel: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-panel);
+            color: var(--text-dark);
+        }
+        .header {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .navbar a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .welcome-banner {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .news-item h4, .alert-item h4 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+        .alert-item {
+            border-left: 5px solid #dc3545;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        .quick-access .card {
+            text-align: center;
+        }
+        .quick-access a {
+            display: block;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .quick-access .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--primary-blue);
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar {
+                margin-top: 10px;
+            }
+            .navbar a {
+                margin: 0 5px;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">FAKCO</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hr.html">HR</a>
+            <a href="tickets.html">IT Helpdesk</a>
+            <a href="directory.html">Directory</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="welcome-banner">
+            <h1>Welcome to FAKCO Intranet</h1>
+            <p>Your central hub for company resources and information.</p>
+        </div>
+
+        <div class="content-layout">
+            <div>
+                <h2 class="section-title">Company News</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="news-item">
+                            <h4>Q3 Performance Review Schedule</h4>
+                            <p>All managers must finalize review schedules by end of next week. Training materials available on HR portal.</p>
+                            <small>Posted: 2024-07-15</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="news-item">
+                            <h4>New Office Policy Update</h4>
+                            <p>Revised dress code effective August 1st. Refer to updated documentation.</p>
+                            <small>Posted: 2024-07-10</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h2 class="section-title">Security Alerts</h2>
+                <div class="card-container">
+                    <div class="card" style="border-left: 5px solid #ffc107;">
+                        <div class="alert-item">
+                            <h4>Phishing Warning</h4>
+                            <p>Be vigilant against suspicious emails impersonating Finance Department. Do not click external links.</p>
+                        </div>
+                    </div>
+                    <div class="card" style="border-left: 5px solid #dc3545;">
+                        <div class="alert-item">
+                            <h4>Mandatory VPN Update</h4>
+                            <p>All remote access users must update VPN client by 2024-07-20 for compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h2 class="section-title">Quick Access</h2>
+                <div class="card-container quick-access">
+                    <div class="card">
+                        <a href="hr.html">
+                            <span class="icon">&#9787;</span> <!-- Placeholder Icon -->
+                            HR System
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="tickets.html">
+                            <span class="icon">&#128222;</span> <!-- Placeholder Icon -->
+                            IT Helpdesk
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="#">
+                            <span class="icon">&#128193;</span> <!-- Placeholder Icon -->
+                            Database Access
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="admin.html">
+                            <span class="icon">&#9881;</span> <!-- Placeholder Icon -->
+                            Admin Panel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hidden security note -->
+        <!-- TODO: secure admin panel before production -->
+    </div>
+</body>
+</html>

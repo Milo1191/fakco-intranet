@@ -1,0 +1,177 @@
+===== admin.html =====
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKCO Intranet Portal - Admin Panel</title>
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e6f0ff;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --bg-light: #fff;
+            --bg-panel: #f9f9f9;
+            --danger-red: #dc3545;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-panel);
+            color: var(--text-dark);
+        }
+        .header {
+            background-color: var(--primary-blue);
+            color: #f4f4f4;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+        .navbar a {
+            color: #f4f4f4;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+        .admin-header {
+            background-color: var(--danger-red);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .admin-header h1 {
+            margin: 0;
+        }
+        .section-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+        .data-list dt {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: 10px;
+        }
+        .data-list dd {
+            margin-left: 0;
+            padding-left: 15px;
+            border-left: 3px solid #eee;
+            margin-bottom: 5px;
+        }
+        .sensitive-data {
+            border: 1px dashed var(--danger-red);
+            padding: 15px;
+            background-color: #fff0f0;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar a {
+                margin: 0 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">FAKCO</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="hr.html">HR</a>
+            <a href="tickets.html">IT Helpdesk</a>
+            <a href="directory.html">Directory</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="admin-header">
+            <h1>System Administration Panel</h1>
+            <p>Warning: This panel is accessible by all authenticated users (Intentional Vulnerability).</p>
+        </div>
+
+        <h2 class="section-title">System Health Overview</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Active Users</h3>
+                <p style="font-size: 2em; color: var(--primary-blue);">1,245</p>
+                <p>Currently logged in: 89</p>
+            </div>
+            <div class="card">
+                <h3>Pending Tickets</h3>
+                <p style="font-size: 2em; color: var(--danger-red);">14</p>
+                <p>Review required in IT Queue.</p>
+            </div>
+            <div class="card">
+                <h3>System Load</h3>
+                <p style="font-size: 2em; color: green;">12%</p>
+                <p>CPU utilization is nominal.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Sensitive Configuration Access (VULNERABLE DATA)</h2>
+        <div class="sensitive-data">
+            <h3>User Roles & Access Levels</h3>
+            <dl class="data-list">
+                <dt>Administrator Role:</dt>
+                <dd>Level 5 (Full System Write)</dd>
+                <dt>Standard Employee Role:</dt>
+                <dd>Level 2 (Read Only, HR/Ticket Access)</dd>
+                <dt>Contractor Role:</dt>
+                <dd>Level 1 (Limited Directory Access)</dd>
+            </dl>
+
+            <h3 style="color: var(--danger-red);">Database Connection Strings (Placeholder)</h3>
+            <p style="font-family: monospace; font-size: 0.9em; word-break: break-all;">
+                DB_CONN: jdbc:mysql://prod-db-01.fakco.local:3306/intranet?user=root&password=SUPER_SECRET_DB_PW_DO_NOT_USE
+            </p>
+            <p style="font-size: 0.8em; color: gray;">Note: Credentials above are static placeholders.</p>
+        </div>
+
+    </div>
+</body>
+</html>
